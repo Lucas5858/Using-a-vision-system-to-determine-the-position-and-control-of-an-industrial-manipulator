@@ -1,0 +1,11 @@
+# TERMINAL 1
+
+docker run --rm -it -p 5900:5900 -p 6080:6080 -v ${HOME}/.ursim/urcaps:/urcaps -v ${HOME}/.ursim/programs:/ursim/programs --name ursim universalrobots/ursim_cb3
+
+# TERMINAL 2
+
+ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur3 robot_ip:=172.17.0.2 launch_rviz:=true
+
+# BROWSER
+
+http://172.17.0.2:6080/vnc.html?host=172.17.0.2&port=6080

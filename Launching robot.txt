@@ -1,0 +1,20 @@
+# TERMINAL 1
+
+ros2 launch lukasz_ur_launch ur3.launch.py
+
+# TERMINAL 2
+
+ros2 service call /dashboard_client/play std_srvs/srv/Trigger {}
+ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur3 launch_rviz:=true
+
+OR TO RESET A PROGRAM ON ROBOT
+ros2 service call /dashboard_client/stop std_srvs/srv/Trigger {}
+ros2 service call /dashboard_client/play std_srvs/srv/Trigger {}
+
+# TERMINAL 3
+
+ros2 run camera_node_package camera_node --ros-args -p camera_id:=6
+
+# TERMINAL 4
+
+ros2 run control_node control_node_exe --ros-args -p function_choice:=2
