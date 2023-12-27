@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>Package containing calibrations and launch files for RoboLab's UR robot.</description>
   <maintainer email="lukasz@todo.todo">lukasz</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
